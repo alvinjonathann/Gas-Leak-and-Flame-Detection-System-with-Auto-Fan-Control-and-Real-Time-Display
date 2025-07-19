@@ -91,13 +91,13 @@ void loop() {
   if (!hitungWaktuAktif && !waktuDicatat && gasValue <= 250 && nilaiGasSebelumnya > 250) {
     hitungWaktuAktif = true;
     waktuMulai = millis();
-    Serial.println("⏳ Mulai hitung waktu dari gas <= 250");
+    Serial.println("START: Mulai hitung waktu dari gas <= 250");
   }
 
   // Stop stopwatch
   if (hitungWaktuAktif && gasValue <= threshold && digitalRead(buzzerPin) == LOW) {
     waktuBerjalan = millis() - waktuMulai;
-    Serial.print("✅ Waktu dari <=250 ke threshold: ");
+    Serial.print("TIME: Waktu dari <=250 ke threshold: ");
     Serial.print(waktuBerjalan / 1000.0);
     Serial.println(" detik");
 
